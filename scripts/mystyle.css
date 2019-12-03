@@ -1,0 +1,124 @@
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color: #111;
+    /*text color*/
+    color: whitesmoke;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color:#b5e61d
+  }
+  
+  /* If you want the content centered horizontally*/
+  .centered {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: left;
+  }
+
+.mygrid{
+  display: grid;
+  grid-template-columns: 16% 82%;
+  grid-gap: 10px;
+  font-size: 20px;
+  padding-bottom: 32px;
+  padding-left:10px;
+}
+
+  .gridlabel {
+    border-radius: 5px;
+    text-align: right;
+    padding: 0px 0px 0px 0px;
+    transform: translate(0, 4px);
+  }
+
+  .gridcontent {
+    border-radius: 5px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  input[type=text] {
+    border-radius: 5px;
+    font-size: 20px;
+    padding-left: 4px;
+}
+
+button{
+  border-radius: 8px;
+  font-size:22px;
+  padding: 2px 6px;
+  border: 2px;
+  box-shadow: 6px;
+}
+
+
+textarea{
+  border-radius: 5px;
+  font-size:14px;
+  width:95%;
+}
+
+.rheader{
+  height:160px;
+}
+
+.rbody{
+  height:500px;
+}
+
+
+.rheader textarea{
+  height:115px;
+}
+
+.rbody textarea{
+  height:455px;
+}
+
+.areacontainer {
+  padding: 0px 20px 30px 40px;
+}
+
+.arealabel{
+  font-size:20px;
+  padding-bottom: 5px;
+}
+
+#getbutton{
+  background-color: limegreen;
+}
+
+#patchbutton{
+  background-color:silver;
+}
+
+#postbutton{
+  background-color:orange;
+}
+
+#deletebutton{
+  background-color:red;
+}
+
+.responselabel{
+  color:violet;
+}
