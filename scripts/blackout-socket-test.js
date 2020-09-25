@@ -32,7 +32,7 @@ function SendWithMethod(method) {
 		body = '';
 	}
 	var payload = GeneratePayload(method, path, query, headers, body);
-
+	console.log("Sending Rquest: ", payload);
 	SendPayload(socket, payload);
 }
 
