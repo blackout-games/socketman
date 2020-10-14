@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+	<title>Socket Testing</title>
+	<script src='scripts/socket.io.js'></script>
+	<script src='https://code.jquery.com/jquery-1.11.1.js'></script>
+	<script src='scripts/blackout-socket-test.js'></script>
+	<link rel='stylesheet' href='scripts/mystyle.css'>
+	<script>
+		// set some default values when the page loads
+		window.onload = function () {
+			//SetDefaultHeaders();
+		};
+	</script>
+</head>
+
+
+<body onunload="_CloseSocket()">
+
+	<div class='split left'>
+		<div class='mygrid'>
+			<div class='gridlabel'>Request path: </div>
+			<div class='gridcontent'><input type='text' name='requestPath' id='requestPath' size='50'></div>
+			<div class='gridlabel'>Request query: </div>
+			<div class='gridcontent'><input type='text' name='requestQuery' id='requestQuery' size='50'></div>
+			<div class='gridlabel'>Token: </div>
+			<div class='gridcontent'><input type='text' name='tokenInput' id='tokenInput' size='50'></div>
+		</div>
+
+		<div class='areacontainer'>
+			<div class='rheader'>
+				<div class='arealabel'>Request Header: </div>
+				<div><textarea id='requestHeader' height='130px'></textarea></div>
+			</div>
+			<button onclick='SetDefaultHeaders()'>Generate Headers</button><br>
+		</div>
+
+
+		<div class='areacontainer'>
+			<div class='rbody'>
+				<div class='arealabel'>Request Body: </div>
+				<div><textarea id='requestBody'></textarea></div>
+			</div>
+
+			<button onclick='SendGet()' id='getbutton'>GET</button>
+			<button onclick='SendPost()' id='postbutton'>POST</button>
+			<button onclick='SendPatch()' id='patchbutton'>PATCH</button>
+			<button onclick='SendDelete()' id='deletebutton'>DELETE</button>
+		</div>
+
+
+	</div>
+
+	<div class='split right'>
+		<div class='mygrid'>
+			<div class='gridlabel'>Request ID: </div>
+			<div class='gridcontent'>
+				<div class='responselabel'><span id='requestIdDisplay'></span></div>
+			</div>
+
+			<div class='gridlabel'>Status code: </div>
+			<div class='gridcontent'>
+				<div class='responselabel'><span id='responseStatus'></span></div>
+			</div>
+		</div>
+
+		<div class='areacontainer'>
+			<div class='rheader'>
+				<div class='arealabel'>Response Header:</div>
+				<div><textarea id='responseHeader' rows='6'></textarea></div>
+			</div>
+		</div>
+
+		<div class='areacontainer'>
+			<div class='rbody'>
+				<div class='arealabel'>Response Body:</div>
+				<div><textarea id='responseBody' rows='30'></textarea></div>
+			</div>
+		</div>
+
+	</div>
+
+	<ul>
+		<li><button onclick='ReopenSocket()'>Open Socket</button></li>
+		<li><button onclick='_CloseSocket()'>Close Socket</button></li>
+		<li>
+			<button>Emit</button>
+		</li>
+	</ul>
+</body>
+
+</html>
